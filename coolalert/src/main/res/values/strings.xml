@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CoolAlert</string>
+    <string name="cool_alert_container">cool_alert_container</string>
+</resources>

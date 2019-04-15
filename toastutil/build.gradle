@@ -1,0 +1,39 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release' // must be applied after your artifact generating plugin (eg. java / com.android.library)
+
+android {
+    compileSdkVersion 23
+
+
+
+    defaultConfig {
+        minSdkVersion 22
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:23.0.0'
+}
+
+publish {
+    userOrg = 'hxl1994'
+    groupId = 'com.mrh'
+    repoName = 'ToastUtil'
+    artifactId = 'ToastUtil'
+    publishVersion = '1.0.0'
+    desc = 'first module,haha...'
+    website = 'https://github.com/novoda/bintray-release'
+}
